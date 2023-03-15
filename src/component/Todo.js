@@ -1,6 +1,7 @@
 import Modal from "./Modal";
 import Backdrop from "./Backdrop";
 import { useState } from "react";
+import { Button } from 'primereact/button';     
 
 
 function ToDo(props) {
@@ -19,7 +20,11 @@ function ToDo(props) {
       
         <div className='card'>
           <h2>{props.text}</h2>        
+          {/*
           <button className='btn' onClick={deleteHandle}>Delete</button>
+        */}
+
+            <Button label="Delete" icon="pi pi-shopping-bag"></Button>
 
           {modalIsOpen && <Modal onCancel={closeHandle} onConfirm={closeHandle}/>}
           {modalIsOpen && <Backdrop/>}
@@ -29,5 +34,7 @@ function ToDo(props) {
       
     );
   }
+
+  
   
   export default ToDo;
